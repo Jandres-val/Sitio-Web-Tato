@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Reparación de llantas Tato</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <style>
+            
+        /* Reset y base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #1d242b; /* Color oscuro fondo */
+            color: #f0f0f0;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+            padding-bottom: 80px; /* espacio para footer y botón whatsapp */
+        }
+
+        header {
+            background-color: #212a33;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid #d22020;
+            flex-wrap: wrap;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        header h1 {
+            color: #d22020;
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+
+        nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d22020;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #d22020;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #e1e1e1;
+            max-width: 750px;
+            margin: 0 auto 25px;
+        }
+
+        /* Apartado inicio */
+        #inicio p.welcome {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 10px;
+            color: #f0f0f0;
+        }
+
+        /* Servicios - ajuste centrado y banners debajo del título */
+        #servicios {
+            text-align: center;
+        }
+
+        .servicios {
+            display: inline-flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .servicio-card {
+            background: #2e3740;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(210, 32, 32, 0.25);
+            transition: transform 0.3s ease;
+            width: 280px;
+            text-align: left; /* mantiene el texto alineado a la izquierda dentro de la tarjeta */
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(210, 32, 32, 0.5);
+        }
+
+        .servicio-card h3 {
+            margin-bottom: 12px;
+            color: #d22020;
+        }
+
+        .servicio-card p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        /* Contacto */
+        #contacto p {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+        }
+
+        #contacto .telefono {
+            color: #d22020;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+        /* Mapa */
+        #mapa {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(210, 32, 32, 0.25);
+            margin: 0 auto;
+            display: block;
+            max-width: 750px;
+            border: none;
+        }
+
+        /* WhatsApp Floating Button */
+        #whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        #whatsapp-btn:hover {
+            background-color: #1ebc57;
+        }
+        #whatsapp-btn svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #212a33;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header h1 {
+                margin: 10px 0 0 0;
+                flex-grow: 0;
+            }
+
+            nav {
+                margin-top: 15px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 1.1rem;
+            }
+
+            main {
+                margin: 20px auto;
+            }
+
+            .servicios {
+                display: block;
+            }
+
+            .servicio-card {
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto 25px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Reemplazar "logo.svg" con el archivo de imagen real -->
+    <img src="logo.svg" alt="Logo Reparación de llantas Tato" />
+    <h1>Reparación de Llantas</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#acerca">Acerca de nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<main>
+    <!-- Apartado Inicio -->
+    <section id="inicio">
+        <h2>Bienvenidos</h2>
+        <p class="welcome">Tu seguridad y comodidad son nuestra prioridad. Confía en nuestro equipo para cuidar de tus llantas con profesionalismo y rapidez.</p>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <div class="servicios">
+            <div class="servicio-card">
+                <h3>Reparación de llantas</h3>
+                <p>Servicio especializado para arreglar pinchazos y daños de tus llantas, con garantía de calidad.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Cambio de llantas</h3>
+                <p>Instalamos llantas nuevas o usadas de la mejor calidad para que sigas rodando seguro.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acerca de nosotros -->
+    <section id="acerca">
+        <h2>Acerca de nosotros</h2>
+        <p>En Reparación de Llantas Tato, tenemos más de 24 años de experiencia sirviendo a la comunidad. Nos especializamos en todo tipo de vehículos, garantizando seguridad y durabilidad.</p>
+    </section>
+
+    <!-- Contacto con mapa, dirección y telefono -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <p>Visítanos en Sabalito, Coto Brus</p>
+        <p class="telefono">Tel.: 8845-9956</p>
+        <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31541.579442612616!2d-82.91025000000003!3d8.814469300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa4357e20372987%3A0x9ef58b20d1f2f4e9!2sReparaci%C3%B3n%20de%20llantas%20Tato!5e0!3m2!1ses-419!2scr!4v1762072153784!5m2!1ses-419!2scr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Sabalito, Coto Brus"></iframe>
+    </section>
+</main>
+
+<!-- Botón Whatsapp en esquina inferior derecha -->
+<a href="https://wa.me/50688459956" target="_blank" id="whatsapp-btn" aria-label="Contactar por WhatsApp" title="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.742.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+</a>
+
+<footer>
+    <p>© 2024 Reparación de llantas Tato. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
